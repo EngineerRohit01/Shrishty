@@ -406,6 +406,76 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
   .sticky-cta { padding-bottom: calc(.85rem + env(safe-area-inset-bottom)); }
   .float-btns { bottom: calc(clamp(1rem,3vw,2rem) + env(safe-area-inset-bottom)); }
 }
+
+/* ===== MOBILE SERVICES SLIDER ===== */
+.services-slider{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+
+@media (max-width:768px){
+
+  .services-slider{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:1rem;
+    padding-bottom:10px;
+    scrollbar-width:none;
+  }
+
+  .services-slider::-webkit-scrollbar{
+    display:none;
+  }
+
+  .services-slider > div{
+    min-width:85%;
+    flex:0 0 auto;
+    scroll-snap-align:start;
+  }
+
+  .service-card{
+    height:100%;
+  }
+
+}
+
+/* ===== ACADEMY MOBILE SLIDER ===== */
+#academy .row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+
+@media (max-width:768px){
+
+  #academy .row{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:1rem;
+    padding:0 1rem 12px;
+    flex-wrap:nowrap;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  #academy .row::-webkit-scrollbar{
+    display:none;
+  }
+
+  #academy .row > div{
+    min-width:85%;
+    flex:0 0 auto;
+    scroll-snap-align:start;
+  }
+
+  #academy .service-card{
+    height:100%;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -461,7 +531,7 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
               <a href="#gallery" class="btn-outline"><i class="bi bi-images"></i> View Gallery</a>
             </div>
             <div class="hero-stats">
-              <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Happy Brides</span></div>
+              <div class="stat-item"><span class="stat-num">200+</span><span class="stat-label">Happy Clients</span></div>
               <div class="stat-divider"></div>
               <div class="stat-item"><span class="stat-num">2+</span><span class="stat-label">Years Exp.</span></div>
               <div class="stat-divider"></div>
@@ -510,10 +580,10 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
     <div class="row align-items-center gy-5">
       <div class="col-md-5 fade-in">
         <div class="about-visual">
-          <img src="https://blogger.googleusercontent.com/img/a/AVvXsEht62bufnDunE7763hxkSjHfFCNM1Unlr-IplEhCOCdGazmY9uWoBg-r7HBCesmgMtCz33BaNJ--CjyNBXt2DUdwQcWkT13kV1OUnt8IV_a6TuKwJJBdYYp2j8w6nacEtkDuAixmWBlsLDL532YfVW20JagQPo-duNobhvypEYJE1NRqbVMbWXOtd-Swss=w331-h348" alt="Shristy Chauhan Makeup Artist">
+          <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiGS79ppbly6q1WAmn408OfaZ3e2Ygtr6bkWvcfcopuAR-0Vwn4rYbVkAGpv4J9MkaIVKw06ua2R49vk_WN0GTtGUQQI-vNBbe5y3Ge5jrjpd13z9BS1TIfEFbVvxUvDPs2-c3vzsUWwssYsKm1lTCtdr-vdnKfQ_ZUasNldjPYE8IzheNURLtBLzC_YIg=w203-h364" alt="Shristy Chauhan Makeup Artist">
           <div class="about-badge">
-            <span class="about-badge-num">500+</span>
-            <span class="about-badge-text">Happy Brides</span>
+            <span class="about-badge-num">200+</span>
+            <span class="about-badge-text">Happy Clients</span>
           </div>
         </div>
       </div>
@@ -547,13 +617,21 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
       <div class="sec-line"></div>
       <p class="sec-desc mx-auto" style="max-width:600px">From intimate ceremonies to grand celebrations, every service is crafted with expert precision, premium products, and heartfelt attention to detail.</p>
     </div>
-    <div class="row g-3 g-md-4">
+    <div class="services-slider">
       <div class="col-6 col-md-4 col-lg-3 fade-in">
         <div class="service-card">
           <div class="service-icon"><i class="bi bi-gem"></i></div>
           <div class="service-name">Bridal Makeup</div>
           <p class="service-desc">Complete bridal transformation with long-lasting, flawless finish. Customized to your skin tone and wedding theme.</p>
           <div class="service-price">Starting from <strong>₹8,000</strong></div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-person-check-fill"></i></div>
+          <div class="service-name">Groom makeup</div>
+          <p class="service-desc">Fresh and polished grooming look for grooms with natural finish, skin touch-up, hair setting, and shine control for wedding photos and events.</p>
+          <div class="service-price">Starting from <strong>₹5,000</strong></div>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3 fade-in" style="transition-delay:.06s">
@@ -564,12 +642,20 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
           <div class="service-price">Starting from <strong>₹2,500</strong></div>
         </div>
       </div>
+      <div class="col-6 col-md-4 col-lg-3 fade-in" style="transition-delay:.24s">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-camera-video-fill"></i></div>
+          <div class="service-name">HD Makeup</div>
+          <p class="service-desc">High-definition techniques for flawless skin on camera. Perfect for videos, photoshoots, and weddings.</p>
+          <div class="service-price">Starting from <strong>₹4,000</strong></div>
+        </div>
+      </div>
       <div class="col-6 col-md-4 col-lg-3 fade-in" style="transition-delay:.12s">
         <div class="service-card">
-          <div class="service-icon"><i class="bi bi-ring"></i></div>
+          <div class="service-icon"><span>💍</span></div>
           <div class="service-name">Engagement Makeup</div>
           <p class="service-desc">Radiant, romantic looks for your roka or engagement ceremony. Glowing and photogenic.</p>
-          <div class="service-price">Starting from <strong>₹5,000</strong></div>
+          <div class="service-price">Starting from <strong>₹8,000</strong></div>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3 fade-in" style="transition-delay:.18s">
@@ -580,12 +666,12 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
           <div class="service-price">Starting from <strong>₹8,000</strong></div>
         </div>
       </div>
-      <div class="col-6 col-md-4 col-lg-3 fade-in" style="transition-delay:.24s">
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
         <div class="service-card">
-          <div class="service-icon"><i class="bi bi-camera-video-fill"></i></div>
-          <div class="service-name">HD Makeup</div>
-          <p class="service-desc">High-definition techniques for flawless skin on camera. Perfect for videos, photoshoots, and weddings.</p>
-          <div class="service-price">Starting from <strong>₹4,000</strong></div>
+          <div class="service-icon"><i class="bi bi-cup-straw"></i></div>
+          <div class="service-name">Cocktail makeup</div>
+          <p class="service-desc">Elegant glam look for cocktail nights and special celebrations. Long-lasting, camera-ready makeup with a flawless finish that matches your outfit and event vibe.</p>
+          <div class="service-price">Starting from <strong>₹6,500</strong></div>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3 fade-in" style="transition-delay:.30s">
@@ -651,7 +737,7 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
             <li><i class="bi bi-check-circle-fill"></i>Lens Included</li>
             <li><i class="bi bi-check-circle-fill"></i>Bridal Hairstyling</li>
             <li><i class="bi bi-check-circle-fill"></i>Saree Draping</li>
-            <li><i class="bi bi-check-circle-fill"></i>Bridal Trial Included</li>
+            <li><i class="bi bi-check-circle-fill"></i>No Bridal Trial Included</li>
             <li><i class="bi bi-check-circle-fill"></i>All-Day Touch-Up Support</li>
             <li><i class="bi bi-check-circle-fill"></i>Premium Branded Products</li>
           </ul>
@@ -738,16 +824,131 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
   </div>
 </section>
 
+<!-- ===== ACADEMY ===== -->
+<section id="academy">
+  <div class="container">
+    
+    <div class="text-center fade-in mb-5">
+      <p class="sec-eyebrow">Learn With Shristy</p>
+      <h2 class="sec-title">Professional <em>Academy</em></h2>
+      <div class="sec-line"></div>
+      <p class="sec-desc mx-auto" style="max-width:600px">
+        Start your beauty career with practical makeup training. Learn bridal, party, HD makeup, hairstyling and client handling with expert guidance.
+      </p>
+    </div>
+
+    <div class="row g-3 g-md-4">
+
+      <!-- Beginner Course -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-book-fill"></i></div>
+          <div class="service-name">Basic Makeup Course</div>
+          <p class="service-desc">
+            Perfect for beginners. Learn skin prep, foundation, blending, day looks, party looks and product basics.
+          </p>
+          <div class="service-price">Starting from <strong>₹8,000</strong></div>
+        </div>
+      </div>
+
+      <!-- Bridal -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-gem"></i></div>
+          <div class="service-name">Bridal Masterclass</div>
+          <p class="service-desc">
+            Learn bridal base, waterproof makeup, luxury finishing, dupatta setting and complete bridal looks.
+          </p>
+          <div class="service-price">Starting from <strong>₹15,000</strong></div>
+        </div>
+      </div>
+
+      <!-- HD -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-camera-fill"></i></div>
+          <div class="service-name">HD Makeup Course</div>
+          <p class="service-desc">
+            Learn camera-ready skin finish, flawless HD base, contouring and modern professional techniques.
+          </p>
+          <div class="service-price">Starting from <strong>₹12,000</strong></div>
+        </div>
+      </div>
+
+      <!-- Hair -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-scissors"></i></div>
+          <div class="service-name">Hairstyling Course</div>
+          <p class="service-desc">
+            Learn curls, buns, bridal buns, open hairstyles, volume setting and trending hair looks.
+          </p>
+          <div class="service-price">Starting from <strong>₹10,000</strong></div>
+        </div>
+      </div>
+
+      <!-- Self Makeup -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-person-heart"></i></div>
+          <div class="service-name">Self Makeup Class</div>
+          <p class="service-desc">
+            Learn daily makeup, office looks, party glam and product use for your personal beauty routine.
+          </p>
+          <div class="service-price">Starting from <strong>₹3,000</strong></div>
+        </div>
+      </div>
+
+      <!-- Certification -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-award-fill"></i></div>
+          <div class="service-name">Certification Program</div>
+          <p class="service-desc">
+            Get training certificate after successful completion and start your freelance makeup career.
+          </p>
+          <div class="service-price">Starting from <strong>₹18,000</strong></div>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-briefcase-fill"></i></div>
+          <div class="service-name">Freelance Setup</div>
+          <p class="service-desc">
+            Learn pricing, client dealing, Instagram growth and building your makeup business professionally.
+          </p>
+          <div class="service-price">Starting from <strong>₹7,000</strong></div>
+        </div>
+      </div>
+
+      <!-- Advance -->
+      <div class="col-6 col-md-4 col-lg-3 fade-in">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-stars"></i></div>
+          <div class="service-name">Advanced Pro Course</div>
+          <p class="service-desc">
+            Complete advanced training for professionals covering bridal, editorial, glam and premium clients.
+          </p>
+          <div class="service-price">Starting from <strong>₹25,000</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ===== SOCIAL PROOF ===== -->
 <section id="proof">
   <div class="container">
     <div class="text-center fade-in mb-2">
       <p class="sec-eyebrow">Trust & Numbers</p>
-      <h2 class="sec-title">Why Brides <em>Choose</em> Shristy</h2>
+      <h2 class="sec-title">Why Clients <em>Choose</em> Shristy</h2>
       <div class="sec-line"></div>
     </div>
     <div class="row align-items-center justify-content-center g-0">
-      <div class="col-6 col-md-3 fade-in"><div class="proof-item"><span class="proof-num" id="counter1">0</span><span class="proof-label">Happy Brides<br>Served</span></div></div>
+      <div class="col-6 col-md-3 fade-in"><div class="proof-item"><span class="proof-num" id="counter1">0</span><span class="proof-label">Happy Clients<br>Served</span></div></div>
       <div class="proof-divider d-none d-md-block" style="height:80px"></div>
       <div class="col-6 col-md-3 fade-in" style="transition-delay:.1s"><div class="proof-item"><span class="proof-num" id="counter2">0</span><span class="proof-label">5★ Reviews<br>Online</span></div></div>
       <div class="proof-divider d-none d-md-block" style="height:80px"></div>
@@ -900,10 +1101,6 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
         <div class="faq-a">Only premium, internationally recognized brands are used—MAC, NARS, Huda Beauty, Charlotte Tilbury, Kryolan, and more. All products are regularly updated and are 100% hygienic and skin-safe.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Is a bridal trial mandatory?<div class="faq-icon"><i class="bi bi-plus-lg"></i></div></button>
-        <div class="faq-a">A trial is strongly recommended for brides—it helps understand your preferences, test how your skin reacts to products, and finalize the perfect look with no surprises on your wedding day.</div>
-      </div>
-      <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">How long does bridal makeup take?<div class="faq-icon"><i class="bi bi-plus-lg"></i></div></button>
         <div class="faq-a">Bridal makeup typically takes 2.5–4 hours depending on the look complexity, skin prep, hairstyling, and saree draping. Party makeup usually takes 45–90 minutes. Plan accordingly!</div>
       </div>
@@ -1030,7 +1227,7 @@ footer { background: #1a1210; padding: clamp(2.5rem,5vw,3.5rem) clamp(1rem,5vw,3
       </div>
     </div>
     <div class="footer-bottom d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-      <span class="footer-copy">© 2025 Makeup by Shristy · Shristy Chauhan · Delhi, India · All rights reserved · Developed by Rohit</span>
+      <span class="footer-copy">© <span id="year"></span> Makeup by Shristy. Shristy Chauhan · Delhi, India · All rights reserved · Developed by Rohit</span>
       <div class="footer-legal d-flex gap-3">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
@@ -1162,6 +1359,8 @@ function sendEnquiry(){
   window.open(`https://wa.me/918851522670?text=${msg}`, '_blank');
   $('#eq_success').fadeIn(300);
 }
+
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
